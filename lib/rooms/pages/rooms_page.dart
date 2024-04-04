@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_chat_app/cubits/profiles/profiles_cubit.dart';
-import 'package:my_chat_app/cubits/rooms/rooms_cubit.dart';
-import 'package:my_chat_app/models/profile.dart';
-import 'package:my_chat_app/pages/chat_page.dart';
-import 'package:my_chat_app/pages/register_page.dart';
+import 'package:my_chat_app/profile/cubits/profiles_cubit.dart';
+import 'package:my_chat_app/rooms/cubits/rooms_cubit.dart';
+import 'package:my_chat_app/profile/models/profile.dart';
+import 'package:my_chat_app/chat/pages/chat_page.dart';
+import 'package:my_chat_app/profile/pages/register_page.dart';
 import 'package:my_chat_app/utils/constants.dart';
-import 'package:timeago/timeago.dart';
+
+import '../widgets/room_preview.dart';
 
 /// Displays the list of chat threads
 class RoomsPage extends StatelessWidget {
@@ -56,47 +57,7 @@ class RoomsPage extends StatelessWidget {
                     children: [
                       _NewUsers(newUsers: newUsers),
                       Expanded(
-                        child: ListView.builder(
-                          itemCount: rooms.length,
-                          itemBuilder: (context, index) {
-                            final room = rooms[index];
-                            final otherUser =
-                            profiles[room.otherUserId];
-
-                            return ListTile(
-                              onTap: () =>
-                                  Navigator.of(context)
-                                      .push(ChatPage.route(
-                                      room.id)),
-                              leading: CircleAvatar(
-                                child: otherUser == null
-                                    ? preloader
-                                    : Text(otherUser
-                                    .username
-                                    .substring(0, 2)),
-                              ),
-                              title: Text(otherUser == null
-                                  ? 'Loading...'
-                                  : otherUser.username),
-                              subtitle: room.lastMessage !=
-                                  null
-                                  ? Text(
-                                room.lastMessage!
-                                    .content,
-                                maxLines: 1,
-                                overflow: TextOverflow
-                                    .ellipsis,
-                              )
-                                  : const Text(
-                                  'Room created'),
-                              trailing: Text(format(
-                                  room.lastMessage
-                                      ?.createdAt ??
-                                      room.createdAt,
-                                  locale: 'en_short')),
-                            );
-                          },
-                        ),
+                        child: room_preview(rooms: rooms, profiles: profiles),
                       ),
                     ],
                   );

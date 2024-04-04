@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_chat_app/cubits/profiles/profiles_cubit.dart';
-import 'package:my_chat_app/models/profile.dart';
-import 'package:my_chat_app/models/message.dart';
-import 'package:my_chat_app/models/room.dart';
+import 'package:my_chat_app/profile/cubits/profiles_cubit.dart';
+import 'package:my_chat_app/profile/models/profile.dart';
+import 'package:my_chat_app/chat/models/message.dart';
+import 'package:my_chat_app/rooms/models/room.dart';
 import 'package:my_chat_app/utils/constants.dart';
 
 part 'rooms_state.dart';

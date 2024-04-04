@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:my_chat_app/models/profile.dart';
+import 'package:my_chat_app/profile/models/profile.dart';
 import 'package:my_chat_app/utils/constants.dart';
 
 part 'profiles_state.dart';

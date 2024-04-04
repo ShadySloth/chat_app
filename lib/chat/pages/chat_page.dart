@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_chat_app/components/user_avatar.dart';
-import 'package:my_chat_app/cubits/chat/chat_cubit.dart';
+import 'package:my_chat_app/profile/components/user_avatar.dart';
+import 'package:my_chat_app/chat/cubits/chat_cubit.dart';
 
-import 'package:my_chat_app/models/message.dart';
+import 'package:my_chat_app/chat/models/message.dart';
 import 'package:my_chat_app/utils/constants.dart';
 import 'package:timeago/timeago.dart';
 
@@ -54,8 +54,8 @@ class ChatPage extends StatelessWidget {
               ],
             );
           } else if (state is ChatEmpty) {
-            return Column(
-              children: const [
+            return const Column(
+              children: [
                 Expanded(
                   child: Center(
                     child: Text('Start your conversation now :)'),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_chat_app/cubits/profiles/profiles_cubit.dart';
+import 'package:my_chat_app/profile/cubits/profiles_cubit.dart';
 import 'package:my_chat_app/utils/constants.dart';
 
 /// Widget that will display a user's avatar

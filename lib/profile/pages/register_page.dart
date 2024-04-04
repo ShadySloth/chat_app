@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:my_chat_app/pages/login_page.dart';
-import 'package:my_chat_app/pages/rooms_page.dart';
+import 'package:my_chat_app/profile/pages/login_page.dart';
+import 'package:my_chat_app/rooms/pages/rooms_page.dart';
 import 'package:my_chat_app/utils/constants.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 

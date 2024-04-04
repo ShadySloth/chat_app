@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_chat_app/cubits/profiles/profiles_cubit.dart';
+import 'package:my_chat_app/profile/cubits/profiles_cubit.dart';
 import 'package:my_chat_app/utils/constants.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:my_chat_app/pages/splash_page.dart';
+import 'package:my_chat_app/splash_page.dart';
 import 'package:my_chat_app/secret.dart' as secret;
 
 Future<void> main() async {
